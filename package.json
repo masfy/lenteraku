@@ -3,10 +3,15 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/sw-inject.js || exit 0",
-    "preview": "vite preview"
+    "build": "vite build",
+    "vercel-build": "vite build && node scripts/sw-inject.js || true",
+    "preview": "vite preview",
+    "start": "vite preview --port $PORT"
   },
   "dependencies": {
     "react": "^18.3.1",
